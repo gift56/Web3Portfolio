@@ -9,14 +9,14 @@ const Home: NextPage = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>
-            Welcome to{" "}
+            My{" "}
             <span className={styles.gradientText0}>
               <a
-                href="https://thirdweb.com/"
+                href="https://thirdweb.com/dashboard/contracts/deploy"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                thirdweb.
+                Contracts
               </a>
             </span>
           </h1>
@@ -28,9 +28,7 @@ const Home: NextPage = () => {
           </p>
         </div>
 
-        <div className={styles.grid}>
-         
-        </div>
+        <div className={styles.grid}></div>
       </div>
     </main>
   );
