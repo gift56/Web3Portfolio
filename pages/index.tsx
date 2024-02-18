@@ -65,7 +65,7 @@ const Home: NextPage = () => {
             description="Update your profile status on the blockchain"
           />
           <ContractCard
-            href="/"
+            href="/project/tipjar"
             contractAddress={TIP_JAR_CONTRACT_ADDRESS}
             title="Tip Jar →"
             description="Feel free to leave a tip on the tip jar."
