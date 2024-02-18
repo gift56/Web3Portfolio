@@ -1,5 +1,5 @@
 import {
-    ConnectWallet,
+  ConnectWallet,
   useAddress,
   useContract,
   useContractMetadata,
@@ -48,7 +48,7 @@ const ERC20ProjectPage = () => {
           <h3>Token Balance</h3>
           {tokenBalanceLoading ? (
             "Loading Balance..."
-          ) : tokenBalnceError ? (
+          ) : tokenBalnceError === false ? (
             <div>
               <h3>No Wallet Connected!</h3>
               <ConnectWallet />
