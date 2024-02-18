@@ -7,6 +7,7 @@ import {
   useContractMetadata,
   useContractRead,
 } from "@thirdweb-dev/react";
+import { ethers } from "ethers";
 
 const TipJarProjectPage = () => {
   const { contract } = useContract(TIP_JAR_CONTRACT_ADDRESS);
@@ -41,7 +42,12 @@ const TipJarProjectPage = () => {
         </div>
         <div className={styles.stakeSection}>
           <h3>Tip Jar balance</h3>
-          <p></p>
+          <p>
+            Total Tips:
+            {isLoadingTipBalance
+              ? "Loading Total Supply..."
+              : ` ${ethers.utils.formatEther(tipBalance)} MATIC`}
+          </p>
         </div>
         <div className={styles.stakeSection}>
           <h3>Withdrawn balance</h3>
