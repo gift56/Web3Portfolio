@@ -66,8 +66,16 @@ const ERC721ProjectPage = () => {
         </div>
         <div className={styles.stakeSection}>
           <h3>Your NFTS</h3>
-          <p></p>
+          <p>
+            Total Owned:{" "}
+            {isLoadingOwnedNfts
+              ? "Loading Owned Nfts..."
+              : ` ${ownedNfts?.length}`}
+          </p>
         </div>
+      </div>
+      <div>
+        <h2 className={styles.gradientText0}>My NFTS: </h2>
       </div>
     </div>
   );
