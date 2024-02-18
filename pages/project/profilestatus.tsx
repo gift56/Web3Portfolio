@@ -46,7 +46,7 @@ const ProfileStatusPage = () => {
           <input
             type="text"
             value={status}
-            onChange={(e) => e.target.value}
+            onChange={(e) => setStatus(e.target.value)}
             style={{
               width: "100%",
               height: "2rem",
