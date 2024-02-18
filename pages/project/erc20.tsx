@@ -59,7 +59,10 @@ const ERC20ProjectPage = () => {
               <p>
                 Balance : {tokenBalance?.displayValue} {tokenBalance?.symbol}
               </p>
-              <Web3Button contractAddress={ERC20_CONTRACT_ADDRESS} action={(contract)=>contract.e}>
+              <Web3Button
+                contractAddress={ERC20_CONTRACT_ADDRESS}
+                action={(contract) => contract.erc20.burn(10)}
+              >
                 Burn 10 Token
               </Web3Button>
             </>
@@ -67,6 +70,8 @@ const ERC20ProjectPage = () => {
         </div>
         <div className={styles.stakeSection}>
           <h3>Earn Tokens</h3>
+
+          <p>Earn more token by staking an ERC721 NFT.</p>
         </div>
       </div>
     </div>
