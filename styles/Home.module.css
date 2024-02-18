@@ -329,7 +329,7 @@
 }
 .matchButton {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   color: #131313;
   margin: 0.75rem;
   outline: none;
@@ -337,4 +337,5 @@
   border-radius: 8px;
   padding: 12px;
   border: 1px solid white;
+  cursor: pointer;
 }
