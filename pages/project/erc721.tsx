@@ -79,7 +79,9 @@ const ERC721ProjectPage = () => {
           My NFTS:{" "}
         </h2>
         <div className={styles.grid}>
-            
+          {isLoadingOwnedNfts
+            ? "Loading NFTS"
+            : ownedNfts?.map((nft) => <div></div>)}
         </div>
       </div>
     </div>
