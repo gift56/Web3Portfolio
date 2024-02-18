@@ -15,7 +15,16 @@ const HeroCard = (props: HeroCardProps) => {
         <div className={styles.loadingText}>Loading... </div>
       ) : (
         <div className={styles.heroCardContainer}>
-          <MediaRenderer src={props.image} width="100%" height="auto" className={styles.heroCardContentImage} />
+          <MediaRenderer
+            src={props.image}
+            width="100%"
+            height="auto"
+            className={styles.heroCardContentImage}
+          />
+          <div className={styles.heroCardContent}>
+            <h1 className={styles.gradientText1}>{props.title}</h1>
+            <p>{props.description}</p>
+          </div>
         </div>
       )}
     </>
