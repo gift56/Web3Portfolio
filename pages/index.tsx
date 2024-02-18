@@ -61,7 +61,7 @@ const Home: NextPage = () => {
             href="/"
             contractAddress={TIP_JAR_CONTRACT_ADDRESS}
             title="Tip Jar →"
-            description=""
+            description="Feel free to leave a tip on the tip jar."
           />
         </div>
       </div>
