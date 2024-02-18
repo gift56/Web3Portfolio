@@ -15,6 +15,18 @@ const ProfileStatusPage = () => {
         description={contractMetadata?.description!}
         image={contractMetadata?.image!}
       />
+      <div className={styles.grid}>
+        <div className={styles.stakeSection}>
+          <h3>Current Status</h3>
+          <p>Tips in MATIC and record it on the blockchain.</p>
+        </div>
+        <div className={styles.stakeSection}>
+          <h3>Update Status</h3>
+        </div>
+        <div className={styles.stakeSection}>
+          <h3>Status Exist</h3>
+        </div>
+      </div>
     </div>
   );
 };
