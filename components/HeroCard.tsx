@@ -1,3 +1,4 @@
+import { MediaRenderer } from "@thirdweb-dev/react";
 import styles from "../styles/Home.module.css";
 
 type HeroCardProps = {
@@ -13,7 +14,9 @@ const HeroCard = (props: HeroCardProps) => {
       {props.isLoading ? (
         <div className={styles.loadingText}>Loading... </div>
       ) : (
-        <div className={styles.heroCardContainer}></div>
+        <div className={styles.heroCardContainer}>
+          <MediaRenderer src={props.image} width="100%" height="auto" className={styles.heroCardContentImage} />
+        </div>
       )}
     </>
   );
