@@ -52,12 +52,25 @@ const TipJarProjectPage = () => {
           <p>
             Total Tips:
             {isLoadingTipBalance
-              ? "Loading Total Supply..."
+              ? "Loading Total Tips..."
               : ` ${ethers.utils.formatEther(tipBalance)} MATIC`}
           </p>
         </div>
         <div className={styles.stakeSection}>
           <h3>Withdrawn balance</h3>
+          {isLoadingOwner ? (
+            "Loading Total Supply..."
+          ) : owner === address ? (
+            <Web3Button
+              contractAddress={TIP_JAR_CONTRACT_ADDRESS}
+              action={(contract) => contract.call("withdrawTips")}
+              onSuccess={() => alert("Tip Withdrawn")}
+            >
+              Withdraw Balance
+            </Web3Button>
+          ) : (
+            <p>Only owner can withdraw the balance.</p>
+          )}
         </div>
       </div>
     </div>
