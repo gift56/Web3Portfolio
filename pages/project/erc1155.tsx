@@ -1,7 +1,9 @@
 import {
   Web3Button,
+  useAddress,
   useContract,
   useContractMetadata,
+  useOwnedNFTs,
   useTotalCount,
 } from "@thirdweb-dev/react";
 import React from "react";
@@ -18,6 +20,10 @@ const ERC1155ProjectPage = () => {
   const { data: totalNftSupply, isLoading: isLoadingTotalNftSupply } =
     useTotalCount(contract);
 
+  const { data: ownedNfts, isLoading: isLoadingOwnedNfts } = useOwnedNFTs(
+    contract,
+    address
+  );
   return (
     <div className={styles.container}>
       <HeroCard
@@ -48,6 +54,14 @@ const ERC1155ProjectPage = () => {
         </div>
         <div className={styles.stakeSection}>
           <h3>Your NFTS</h3>
+
+          {isLoadingOwnedNfts
+            ? "Loading Owned Nfts..."
+            : ownedNfts?.map((nft) => (
+                <p key={nft.metadata.id}>
+                  TokenID#{nft.metadata.id} Owned: {nft.quantityOwned}
+                </p>
+              ))}
         </div>
       </div>
     </div>
