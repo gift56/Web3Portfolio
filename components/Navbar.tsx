@@ -4,7 +4,7 @@ import { ConnectWallet } from "@thirdweb-dev/react";
 
 const Navbar = () => {
   return (
-    <nav className={styles.navbar}>
+    <nav className={styles.navbarContainer}>
       <Link href="/">
         <p
           className={styles.gradientText1}
