@@ -69,11 +69,11 @@
 }
 
 .grid {
-  width: 100%;
-  display: grid;
+  display: flex;
   justify-content: flex-start;
-  grid-template-columns: auto auto auto;
+  flex-wrap: wrap;
   gap: 20px;
+  width: 100%;
 }
 
 .card {
@@ -83,7 +83,7 @@
   text-decoration: none;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  width: 100%;
+  width: 33.3%;
   overflow: none;
   border: none;
 }
@@ -127,10 +127,6 @@
 @media (max-width: 768px) {
   .header {
     margin-left: 0;
-  }
-  .grid {
-    width: 100%;
-    grid-template-columns: auto;
   }
   .title {
     font-size: 3rem;
@@ -294,7 +290,7 @@
 }
 
 .stakeSection {
-  width: 100%;
+  width: 33.3%;
   background-color: #222;
   border: #222 1px solid;
   border-radius: 8px;
