@@ -22,7 +22,7 @@ const ERC20ProjectPage = () => {
   const {
     data: tokenBalance,
     isLoading: tokenBalanceLoading,
-    isError: tokenBalnceError,
+    error: tokenBalnceError,
   } = useTokenBalance(contract, address);
 
   return (
@@ -46,13 +46,13 @@ const ERC20ProjectPage = () => {
         </div>
         <div className={styles.stakeSection}>
           <h3>Token Balance</h3>
-          {tokenBalanceLoading ? (
-            "Loading Balance..."
-          ) : tokenBalnceError === false ? (
+          {!address ? (
             <div>
               <h3>No Wallet Connected!</h3>
               <ConnectWallet />
             </div>
+          ) : tokenBalanceLoading ? (
+            "Loading Balance..."
           ) : (
             <p>
               Balance : {tokenBalance?.displayValue} {tokenBalance?.symbol}
