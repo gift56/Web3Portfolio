@@ -11,6 +11,7 @@ import {
 import { ERC721_CONTRACT_ADDRESS } from "../../constants/addresses";
 import styles from "../../styles/Home.module.css";
 import { HeroCard } from "../../components";
+import Link from "next/link";
 
 const ERC721ProjectPage = () => {
   const address = useAddress();
@@ -89,7 +90,9 @@ const ERC721ProjectPage = () => {
                     <h2 className={styles.gradientText1}>
                       {nft.metadata.name}
                     </h2>
-                    <p>{nft.metadata.description}</p>
+                    <Link href={`/project/staking`}>
+                      <button className={styles.matchButton}>Stake NFT</button>
+                    </Link>
                   </div>
                 </div>
               ))}
