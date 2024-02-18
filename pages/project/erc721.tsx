@@ -27,6 +27,7 @@ const ERC721ProjectPage = () => {
           <Web3Button
             contractAddress={ERC721_CONTRACT_ADDRESS}
             action={(contract) => contract.erc721.claim(1)}
+            onSuccess={()=> alert("NFT Claimed")}
           >
             Claim NFT
           </Web3Button>
