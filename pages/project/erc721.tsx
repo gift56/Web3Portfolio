@@ -75,7 +75,9 @@ const ERC721ProjectPage = () => {
         </div>
       </div>
       <div>
-        <h2 className={styles.gradientText0}>My NFTS: </h2>
+        <h2 className={styles.gradientText0} style={{ fontSize: "30px" }}>
+          My NFTS:{" "}
+        </h2>
       </div>
     </div>
   );
