@@ -1,5 +1,5 @@
 import {
-  MediaRenderer,
+  ThirdwebNftMedia,
   Web3Button,
   useAddress,
   useClaimedNFTSupply,
@@ -85,13 +85,18 @@ const ERC721ProjectPage = () => {
             ? "Loading NFTS"
             : ownedNfts?.map((nft) => (
                 <div key={nft.metadata.id} className={styles.card}>
-                  <MediaRenderer src={nft.metadata?.image} />
+                  <ThirdwebNftMedia metadata={nft.metadata} />
                   <div className={styles.cardText}>
                     <h2 className={styles.gradientText1}>
                       {nft.metadata.name}
                     </h2>
                     <Link href={`/project/staking`}>
-                      <button className={styles.matchButton}>Stake NFT</button>
+                      <button
+                        className={styles.matchButton}
+                        style={{ width: "100%", margin: "0" }}
+                      >
+                        Stake NFT
+                      </button>
                     </Link>
                   </div>
                 </div>
