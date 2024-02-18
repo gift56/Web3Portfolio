@@ -10,6 +10,7 @@ import {
 import { HeroCard } from "../../components";
 import styles from "../../styles/Home.module.css";
 import { ERC20_CONTRACT_ADDRESS } from "../../constants/addresses";
+import Link from "next/link";
 
 const ERC20ProjectPage = () => {
   const address = useAddress();
@@ -72,6 +73,14 @@ const ERC20ProjectPage = () => {
           <h3>Earn Tokens</h3>
 
           <p>Earn more token by staking an ERC721 NFT.</p>
+          <div>
+            <Link href="/project/erc721">
+              <button className={styles.matchButton}>Stake ERC721</button>
+            </Link>
+            <Link href="/project/erc721">
+              <button className={styles.matchButton}>Claim ERC721</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
