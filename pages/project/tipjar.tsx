@@ -20,6 +20,11 @@ const TipJarProjectPage = () => {
     "getBalance"
   );
 
+  const { data: owner, isLoading: isLoadingOwner } = useContractRead(
+    contract,
+    "owner"
+  );
+
   return (
     <div className={styles.container}>
       <HeroCard
