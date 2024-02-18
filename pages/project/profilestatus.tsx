@@ -2,6 +2,7 @@ import styles from "../../styles/Home.module.css";
 import { HeroCard } from "../../components";
 import { PROFILE_STATUS_CONTRACT_ADDRESS } from "../../constants/addresses";
 import {
+  Web3Button,
   useAddress,
   useContract,
   useContractMetadata,
@@ -21,6 +22,13 @@ const ProfileStatusPage = () => {
     useContractRead(contract, "userStatus", [address]);
 
   const [status, setStatus] = useState("");
+
+  const updateStatus = async () => {
+    if (!profileStatus.exists) {
+      await contract?.call("createStatus", [status]);
+      return;
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -54,6 +62,12 @@ const ProfileStatusPage = () => {
               paddingLeft: "0.5rem",
             }}
           />
+          <Web3Button
+            contractAddress={PROFILE_STATUS_CONTRACT_ADDRESS}
+            action={(contract) => contract.call()}
+          >
+            Update Status
+          </Web3Button>
         </div>
         <div className={styles.stakeSection}>
           <h3>Status Exist</h3>
