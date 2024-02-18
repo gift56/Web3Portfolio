@@ -30,7 +30,13 @@ const ProfileStatusPage = () => {
       <div className={styles.grid}>
         <div className={styles.stakeSection}>
           <h3>Current Status</h3>
-          <p>Tips in MATIC and record it on the blockchain.</p>
+          {isLoadingCurrentStatus ? (
+            "Loading..."
+          ) : profileStatus.exists ? (
+            profileStatus.message
+          ) : (
+            <i>"No Status Created Yet"</i>
+          )}
         </div>
         <div className={styles.stakeSection}>
           <h3>Update Status</h3>
