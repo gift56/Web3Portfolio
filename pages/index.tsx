@@ -1,5 +1,5 @@
 import { ContractCard } from "../components";
-import { ERC20_CONTRACT_ADDRESS } from "../constants/addresses";
+import { ERC1155_CONTRACT_ADDRESS, ERC20_CONTRACT_ADDRESS, ERC721_CONTRACT_ADDRESS, PROFILE_STATUS_CONTRACT_ADDRESS, STAKING_CONTRACT_ADDRESS, TIP_JAR_CONTRACT_ADDRESS } from "../constants/addresses";
 import styles from "../styles/Home.module.css";
 import { NextPage } from "next";
 
@@ -31,6 +31,36 @@ const Home: NextPage = () => {
             href="/"
             contractAddress={ERC20_CONTRACT_ADDRESS}
             title="ERC20 →"
+            description="A standard interface for tokens."
+          />
+          <ContractCard
+            href="/"
+            contractAddress={ERC721_CONTRACT_ADDRESS}
+            title="ERC721 →"
+            description="A standard interface for tokens."
+          />
+          <ContractCard
+            href="/"
+            contractAddress={ERC1155_CONTRACT_ADDRESS}
+            title="ERC1155 →"
+            description="A standard interface for tokens."
+          />
+          <ContractCard
+            href="/"
+            contractAddress={STAKING_CONTRACT_ADDRESS}
+            title="Staking →"
+            description="A standard interface for tokens."
+          />
+          <ContractCard
+            href="/"
+            contractAddress={PROFILE_STATUS_CONTRACT_ADDRESS}
+            title="Profile Status →"
+            description="A standard interface for tokens."
+          />
+          <ContractCard
+            href="/"
+            contractAddress={TIP_JAR_CONTRACT_ADDRESS}
+            title="Tip Jar →"
             description="A standard interface for tokens."
           />
         </div>
