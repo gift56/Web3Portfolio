@@ -37,6 +37,11 @@ const ProfileStatusPage = () => {
         </div>
         <div className={styles.stakeSection}>
           <h3>Status Exist</h3>
+          {isLoadingProfileStatus
+            ? "Loading..."
+            : profileStatus.exists
+            ? "True"
+            : "False"}
         </div>
       </div>
     </div>
