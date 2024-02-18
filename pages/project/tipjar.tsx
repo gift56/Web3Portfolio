@@ -16,7 +16,15 @@ const TipJarProjectPage = () => {
         image={contractMetadata?.image!}
       />
       <div className={styles.grid}>
-        
+        <div className={styles.stakeSection}>
+          <h3>Leave a tip</h3>
+        </div>
+        <div className={styles.stakeSection}>
+          <h3>Tip Jar balance</h3>
+        </div>
+        <div className={styles.stakeSection}>
+          <h3>Withdrawn balance</h3>
+        </div>
       </div>
     </div>
   );
