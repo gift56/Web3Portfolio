@@ -10,6 +10,8 @@ import { HeroCard } from "../../components";
 import styles from "../../styles/Home.module.css";
 
 const ERC1155ProjectPage = () => {
+  const address = useAddress();
+
   const { contract } = useContract(ERC1155_CONTRACT_ADDRESS, "edition-drop");
   const { data: contractMetadata, isLoading } = useContractMetadata(contract);
 
@@ -43,11 +45,9 @@ const ERC1155ProjectPage = () => {
               ? "Loading Total Supply..."
               : ` ${totalNftSupply?.toNumber()}`}
           </p>
-          
         </div>
         <div className={styles.stakeSection}>
           <h3>Your NFTS</h3>
-         
         </div>
       </div>
     </div>
