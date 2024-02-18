@@ -18,8 +18,13 @@ const ERC20ProjectPage = () => {
   const { data: tokenSupply, isLoading: tokenSupplyLoading } =
     useTokenSupply(contract);
 
-  const { data: tokenBalance, isLoading: tokenBalanceLoading } =
-    useTokenBalance(contract, address);
+  const {
+    data: tokenBalance,
+    isLoading: tokenBalanceLoading,
+    isError: tokenBalnceError,
+  } = useTokenBalance(contract, address);
+
+  console.log(tokenBalnceError);
 
   return (
     <div className={styles.container}>
