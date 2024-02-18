@@ -98,6 +98,7 @@
   border-radius: 4px 4px 0 0;
   margin-bottom: 12px;
   border: none;
+  object-fit: cover !important;
 }
 
 .card:hover,
