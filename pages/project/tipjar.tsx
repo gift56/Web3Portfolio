@@ -5,11 +5,17 @@ import {
   Web3Button,
   useContract,
   useContractMetadata,
+  useContractRead,
 } from "@thirdweb-dev/react";
 
 const TipJarProjectPage = () => {
   const { contract } = useContract(TIP_JAR_CONTRACT_ADDRESS);
   const { data: contractMetadata, isLoading } = useContractMetadata(contract);
+
+  const { data: tipBalance, isLoading: isLoadingTipBalance } = useContractRead(
+    contract,
+    "getBalance"
+  );
 
   return (
     <div className={styles.container}>
@@ -35,6 +41,7 @@ const TipJarProjectPage = () => {
         </div>
         <div className={styles.stakeSection}>
           <h3>Tip Jar balance</h3>
+          <p></p>
         </div>
         <div className={styles.stakeSection}>
           <h3>Withdrawn balance</h3>
