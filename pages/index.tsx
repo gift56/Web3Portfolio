@@ -1,4 +1,5 @@
 import { ContractCard } from "../components";
+import { ERC20_CONTRACT_ADDRESS } from "../constants/addresses";
 import styles from "../styles/Home.module.css";
 import { NextPage } from "next";
 
@@ -26,7 +27,12 @@ const Home: NextPage = () => {
         </div>
 
         <div className={styles.grid}>
-          <ContractCard href="/" />
+          <ContractCard
+            href="/"
+            contractAddress={ERC20_CONTRACT_ADDRESS}
+            title="ERC20 →"
+            description="A standard interface for tokens."
+          />
         </div>
       </div>
     </main>
