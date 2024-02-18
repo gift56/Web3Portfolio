@@ -41,7 +41,7 @@ const Home: NextPage = () => {
             description="Claim ERC20 Token"
           />
           <ContractCard
-            href="/"
+            href="/project/erc721"
             contractAddress={ERC721_CONTRACT_ADDRESS}
             title="ERC721 →"
             description="Claim ERC721 Token"
