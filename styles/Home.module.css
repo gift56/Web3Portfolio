@@ -151,9 +151,9 @@
   align-items: center;
   padding: 1rem 0;
   margin: 0 auto;
-  width: 100%;
+  width: 90%;
   height: 84px;
-  max-width: 1440px;
+  max-width: 1340px;
 }
 .navbarLogo {
   font-size: small;
