@@ -1,5 +1,6 @@
 import {
   ConnectWallet,
+  Web3Button,
   useAddress,
   useContract,
   useContractMetadata,
@@ -54,9 +55,14 @@ const ERC20ProjectPage = () => {
           ) : tokenBalanceLoading ? (
             "Loading Balance..."
           ) : (
-            <p>
-              Balance : {tokenBalance?.displayValue} {tokenBalance?.symbol}
-            </p>
+            <>
+              <p>
+                Balance : {tokenBalance?.displayValue} {tokenBalance?.symbol}
+              </p>
+              <Web3Button contractAddress={ERC20_CONTRACT_ADDRESS} action={(contract)=>contract.e}>
+                Burn 10 Token
+              </Web3Button>
+            </>
           )}
         </div>
         <div className={styles.stakeSection}>
