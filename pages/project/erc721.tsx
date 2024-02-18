@@ -1,7 +1,9 @@
 import {
   Web3Button,
+  useClaimedNFTSupply,
   useContract,
   useContractMetadata,
+  useTotalCount,
 } from "@thirdweb-dev/react";
 import { ERC721_CONTRACT_ADDRESS } from "../../constants/addresses";
 import styles from "../../styles/Home.module.css";
@@ -10,6 +12,12 @@ import { HeroCard } from "../../components";
 const ERC721ProjectPage = () => {
   const { contract } = useContract(ERC721_CONTRACT_ADDRESS, "nft-drop");
   const { data: contractMetadata, isLoading } = useContractMetadata(contract);
+
+  const { data: totalSupply, isLoading: isLoadingTotalSupply } =
+    useTotalCount(contract);
+
+  const { data: totalClaimedSupply, isLoading: isLoadingClaimedTotalSuppy } =
+    useClaimedNFTSupply(contract);
 
   return (
     <div className={styles.container}>
