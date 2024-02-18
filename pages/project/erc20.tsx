@@ -1,4 +1,5 @@
 import {
+    ConnectWallet,
   useAddress,
   useContract,
   useContractMetadata,
@@ -24,8 +25,6 @@ const ERC20ProjectPage = () => {
     isError: tokenBalnceError,
   } = useTokenBalance(contract, address);
 
-  console.log(tokenBalnceError);
-
   return (
     <div className={styles.container}>
       <HeroCard
@@ -49,6 +48,11 @@ const ERC20ProjectPage = () => {
           <h3>Token Balance</h3>
           {tokenBalanceLoading ? (
             "Loading Balance..."
+          ) : !tokenBalnceError ? (
+            <div>
+              <h3>No Wallet Connected!</h3>
+              <ConnectWallet />
+            </div>
           ) : (
             <p>
               Balance : {tokenBalance?.displayValue} {tokenBalance?.symbol}
