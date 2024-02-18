@@ -28,7 +28,7 @@ const TipJarProjectPage = () => {
             action={(contract) =>
               contract.call("tip", [], { value: "1000000000000000" })
             }
-            onSuccess={() => alert("NFT Claimed")}
+            onSuccess={() => alert("Tip Received")}
           >
             {`Tip (0.001 MATIC)`}
           </Web3Button>
