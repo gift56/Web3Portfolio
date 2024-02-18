@@ -67,7 +67,7 @@ const ProfileStatusPage = () => {
           />
           <Web3Button
             contractAddress={PROFILE_STATUS_CONTRACT_ADDRESS}
-            action={(contract) => contract.call()}
+            action={updateStatus}
           >
             Update Status
           </Web3Button>
