@@ -15,6 +15,17 @@ const ERC20ProjectPage = () => {
         description={contractMetadata?.description!}
         image={contractMetadata?.image!}
       />
+      <div className={styles.grid}>
+        <div className={styles.componentCard}>
+            
+        </div>
+        <div className={styles.componentCard}>
+            
+        </div>
+        <div className={styles.componentCard}>
+            
+        </div>
+      </div>
     </div>
   );
 };
