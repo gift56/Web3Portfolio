@@ -18,15 +18,13 @@ const ERC721ProjectPage = () => {
 
       <div className={styles.grid}>
         <div className={styles.stakeSection}>
-          <h3>Token Stats</h3>
-          
+          <h3>Claim ERC721</h3>
         </div>
         <div className={styles.stakeSection}>
-          <h3>Token Balance</h3>
-         
+          <h3>Contract Stats</h3>
         </div>
         <div className={styles.stakeSection}>
-          <h3>Earn Tokens</h3>
+          <h3>Your NFTS</h3>
         </div>
       </div>
     </div>
