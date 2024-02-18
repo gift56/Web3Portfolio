@@ -2,6 +2,7 @@ import {
   useAddress,
   useContract,
   useContractMetadata,
+  useTokenBalance,
   useTokenSupply,
 } from "@thirdweb-dev/react";
 import { HeroCard } from "../../components";
@@ -16,6 +17,9 @@ const ERC20ProjectPage = () => {
 
   const { data: tokenSupply, isLoading: tokenSupplyLoading } =
     useTokenSupply(contract);
+
+  const { data: tokenBalance, isLoading: tokenBalanceLoading } =
+    useTokenBalance(contract, address);
 
   return (
     <div className={styles.container}>
