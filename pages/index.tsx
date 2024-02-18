@@ -1,3 +1,4 @@
+import { ContractCard } from "../components";
 import styles from "../styles/Home.module.css";
 import { NextPage } from "next";
 
@@ -24,7 +25,9 @@ const Home: NextPage = () => {
           </p>
         </div>
 
-        <div className={styles.grid}></div>
+        <div className={styles.grid}>
+          <ContractCard href="/" />
+        </div>
       </div>
     </main>
   );
