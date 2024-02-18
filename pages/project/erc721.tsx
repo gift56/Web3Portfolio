@@ -66,6 +66,7 @@ const ERC721ProjectPage = () => {
         </div>
         <div className={styles.stakeSection}>
           <h3>Your NFTS</h3>
+          <p></p>
         </div>
       </div>
     </div>
