@@ -14,12 +14,11 @@ const HeroCard = (props: HeroCardProps) => {
       {props.isLoading ? (
         <div className={styles.loadingText}>Loading... </div>
       ) : (
-        <div className={styles.heroCardContainer}>
+        <div className={styles.heroContainer}>
           <MediaRenderer
             src={props.image}
-            width="100%"
             height="auto"
-            className={styles.heroCardContentImage}
+            className={styles.heroImageContainer}
           />
           <div className={styles.heroCardContent}>
             <h1 className={styles.gradientText1}>{props.title}</h1>

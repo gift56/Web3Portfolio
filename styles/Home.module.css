@@ -135,6 +135,9 @@
     font-size: 3rem;
     line-height: 1.15;
   }
+  .heroContainer {
+    flex-direction: column !important;
+  }
 }
 
 .card,
@@ -237,22 +240,25 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding-right: 12px;
   margin: 0 auto;
   width: 100%;
-  height: 80vh;
+  height: 68vh;
   max-width: 1440px;
+  gap: 16px;
+  background-color: #131313;
+  border: #272a2d 1px solid;
 }
 .heroImageContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 50% !important;
 }
-.heroImage {
-  text-align: center;
-}
+/* .heroCardContent {
+  
+} */
 
 .stakeContainer {
   display: flex;
