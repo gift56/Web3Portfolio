@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import { ConnectWallet } from "@thirdweb-dev/react";
 
 const Navbar = () => {
   return (
@@ -12,6 +13,7 @@ const Navbar = () => {
           Web3Portfolio
         </p>
       </Link>
+      <ConnectWallet />
     </nav>
   );
 };
