@@ -25,6 +25,7 @@ const ERC20ProjectPage = () => {
       <div className={styles.grid}>
         <div className={styles.stakeSection}>
           <h3>Token Stats</h3>
+          {tokenBalanceLoading ? "Loading Supply..." : <p></p>}
         </div>
         <div className={styles.stakeSection}>
           <h3>Token Balance</h3>
