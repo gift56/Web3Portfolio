@@ -59,7 +59,7 @@ const Home: NextPage = () => {
             description="Stake your ERC721 NFT to earn ERC20 token."
           />
           <ContractCard
-            href="/"
+            href="/project/profilestatus"
             contractAddress={PROFILE_STATUS_CONTRACT_ADDRESS}
             title="Profile Status →"
             description="Update your profile status on the blockchain"
