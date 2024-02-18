@@ -7,6 +7,7 @@ import {
   useContractMetadata,
   useContractRead,
 } from "@thirdweb-dev/react";
+import { useState } from "react";
 
 const ProfileStatusPage = () => {
   const address = useAddress();
@@ -18,6 +19,8 @@ const ProfileStatusPage = () => {
 
   const { data: profileStatus, isLoading: isLoadingProfileStatus } =
     useContractRead(contract, "userStatus", [address]);
+
+  const [status, setStatus] = useState("");
 
   return (
     <div className={styles.container}>
