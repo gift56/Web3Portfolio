@@ -138,6 +138,9 @@
   .heroContainer {
     flex-direction: column !important;
   }
+  .heroImageContainer {
+    width: 100% !important;
+  }
 }
 
 .card,
@@ -254,7 +257,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50% !important;
 }
 /* .heroCardContent {
   

@@ -17,6 +17,7 @@ const HeroCard = (props: HeroCardProps) => {
         <div className={styles.heroContainer}>
           <MediaRenderer
             src={props.image}
+            width="50%"
             height="auto"
             className={styles.heroImageContainer}
           />
