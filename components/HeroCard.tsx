@@ -1,4 +1,4 @@
-
+import styles from "../styles/Home.module.css";
 
 type HeroCardProps = {
   isLoading: boolean;
@@ -8,9 +8,15 @@ type HeroCardProps = {
 };
 
 const HeroCard = (props: HeroCardProps) => {
-  return <>
-  
-  </>;
+  return (
+    <>
+      {props.isLoading ? (
+        <div className={styles.loadingText}>Loading... </div>
+      ) : (
+        <div className={styles.heroCardContainer}></div>
+      )}
+    </>
+  );
 };
 
 export default HeroCard;
