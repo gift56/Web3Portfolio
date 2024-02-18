@@ -1,4 +1,5 @@
 import {
+  useAddress,
   useContract,
   useContractMetadata,
   useTokenSupply,
@@ -8,6 +9,8 @@ import styles from "../../styles/Home.module.css";
 import { ERC20_CONTRACT_ADDRESS } from "../../constants/addresses";
 
 const ERC20ProjectPage = () => {
+  const address = useAddress();
+  
   const { contract } = useContract(ERC20_CONTRACT_ADDRESS, "token");
   const { data: contractMetadata, isLoading } = useContractMetadata(contract);
 
