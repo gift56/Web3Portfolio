@@ -31,19 +31,19 @@ const Home: NextPage = () => {
             href="/"
             contractAddress={ERC20_CONTRACT_ADDRESS}
             title="ERC20 →"
-            description="A standard interface for tokens."
+            description="Claim ERC20 Token"
           />
           <ContractCard
             href="/"
             contractAddress={ERC721_CONTRACT_ADDRESS}
             title="ERC721 →"
-            description="A standard interface for tokens."
+            description="Claim ERC721 Token"
           />
           <ContractCard
             href="/"
             contractAddress={ERC1155_CONTRACT_ADDRESS}
             title="ERC1155 →"
-            description="A standard interface for tokens."
+            description="Claim ERC1155 Token"
           />
           <ContractCard
             href="/"
