@@ -10,11 +10,11 @@ import { ERC20_CONTRACT_ADDRESS } from "../../constants/addresses";
 
 const ERC20ProjectPage = () => {
   const address = useAddress();
-  
+
   const { contract } = useContract(ERC20_CONTRACT_ADDRESS, "token");
   const { data: contractMetadata, isLoading } = useContractMetadata(contract);
 
-  const { data: tokenBalance, isLoading: tokenBalanceLoading } =
+  const { data: tokenSupply, isLoading: tokenSupplyLoading } =
     useTokenSupply(contract);
 
   return (
@@ -28,11 +28,11 @@ const ERC20ProjectPage = () => {
       <div className={styles.grid}>
         <div className={styles.stakeSection}>
           <h3>Token Stats</h3>
-          {tokenBalanceLoading ? (
+          {tokenSupplyLoading ? (
             "Loading Supply..."
           ) : (
             <p className="">
-              Total Supply : {tokenBalance?.displayValue} {tokenBalance?.symbol}
+              Total Supply : {tokenSupply?.displayValue} {tokenSupply?.symbol}
             </p>
           )}
         </div>
