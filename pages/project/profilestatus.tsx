@@ -43,7 +43,17 @@ const ProfileStatusPage = () => {
         </div>
         <div className={styles.stakeSection}>
           <h3>Update Status</h3>
-          <input type="text" value={status} onChange={(e) => e.target.value} style={{width:"100%", height:"2rem", margin}}/>
+          <input
+            type="text"
+            value={status}
+            onChange={(e) => e.target.value}
+            style={{
+              width: "100%",
+              height: "2rem",
+              marginBottom: "1rem",
+              paddingLeft: "0.5rem",
+            }}
+          />
         </div>
         <div className={styles.stakeSection}>
           <h3>Status Exist</h3>
