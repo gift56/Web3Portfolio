@@ -1,4 +1,5 @@
 import {
+  MediaRenderer,
   Web3Button,
   useAddress,
   useClaimedNFTSupply,
@@ -81,9 +82,17 @@ const ERC721ProjectPage = () => {
         <div className={styles.grid}>
           {isLoadingOwnedNfts
             ? "Loading NFTS"
-            : ownedNfts?.map((nft) => <div key={nft.metadata.id} className={styles.card}>
-
-            </div>)}
+            : ownedNfts?.map((nft) => (
+                <div key={nft.metadata.id} className={styles.card}>
+                  <MediaRenderer src={nft.metadata?.image} />
+                  <div className={styles.cardText}>
+                    <h2 className={styles.gradientText1}>
+                      {nft.metadata.name}
+                    </h2>
+                    <p>{nft.metadata.description}</p>
+                  </div>
+                </div>
+              ))}
         </div>
       </div>
     </div>
