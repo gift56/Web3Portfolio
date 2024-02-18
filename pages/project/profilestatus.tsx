@@ -16,6 +16,9 @@ const ProfileStatusPage = () => {
   const { data: currentStatus, isLoading: isLoadingCurrentStatus } =
     useContractRead(contract, "getStatus", [address]);
 
+  const { data: profileStatus, isLoading: isLoadingProfileStatus } =
+    useContractRead(contract, "userStatus", [address]);
+
   return (
     <div className={styles.container}>
       <HeroCard
