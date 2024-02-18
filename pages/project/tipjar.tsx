@@ -7,9 +7,16 @@ const TipJarProjectPage = () => {
   const { contract } = useContract(TIP_JAR_CONTRACT_ADDRESS);
   const { data: contractMetadata, isLoading } = useContractMetadata(contract);
 
-  return <div className={styles.container}>
-    
-  </div>;
+  return (
+    <div className={styles.container}>
+      <HeroCard
+        isLoading={isLoading}
+        title={contractMetadata?.name!}
+        description={contractMetadata?.description!}
+        image={contractMetadata?.image!}
+      />
+    </div>
+  );
 };
 
 export default TipJarProjectPage;
