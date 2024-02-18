@@ -1,3 +1,4 @@
+import ContractCard from "./ContractCard";
 import Navbar from "./Navbar";
 import NftCard from "./NftCard";
 import NftGrid from "./NftGrid";
@@ -14,4 +15,5 @@ export {
   ProfileERC721,
   StakingNftCard,
   StakingNftGrid,
+  ContractCard,
 };
