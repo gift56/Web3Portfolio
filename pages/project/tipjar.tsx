@@ -1,7 +1,11 @@
 import styles from "../../styles/Home.module.css";
 import { HeroCard } from "../../components";
 import { TIP_JAR_CONTRACT_ADDRESS } from "../../constants/addresses";
-import { Web3Button, useContract, useContractMetadata } from "@thirdweb-dev/react";
+import {
+  Web3Button,
+  useContract,
+  useContractMetadata,
+} from "@thirdweb-dev/react";
 
 const TipJarProjectPage = () => {
   const { contract } = useContract(TIP_JAR_CONTRACT_ADDRESS);
@@ -21,7 +25,9 @@ const TipJarProjectPage = () => {
           <p>Tips in MATIC and record it on the blockchain.</p>
           <Web3Button
             contractAddress={TIP_JAR_CONTRACT_ADDRESS}
-            action={(contract) => contract.erc721.claim(1)}
+            action={(contract) =>
+              contract.call("tip", [], { value: "1000000000000000" })
+            }
             onSuccess={() => alert("NFT Claimed")}
           >
             {`Tip (0.001 MATIC)`}
