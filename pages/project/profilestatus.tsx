@@ -28,6 +28,9 @@ const ProfileStatusPage = () => {
       await contract?.call("createStatus", [status]);
       return;
     }
+
+    await contract?.call("updateStatus", [status]);
+    setStatus("");
   };
 
   return (
