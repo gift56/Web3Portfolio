@@ -46,7 +46,7 @@ const ERC20ProjectPage = () => {
             "Loading Balance..."
           ) : (
             <p>
-              Total Supply : {tokenBalance?.displayValue} {tokenBalance?.symbol}
+              Balance : {tokenBalance?.displayValue} {tokenBalance?.symbol}
             </p>
           )}
         </div>
