@@ -18,6 +18,7 @@ const TipJarProjectPage = () => {
       <div className={styles.grid}>
         <div className={styles.stakeSection}>
           <h3>Leave a tip</h3>
+          <p>Tips in MATIC and record it on the blockchain.</p>
         </div>
         <div className={styles.stakeSection}>
           <h3>Tip Jar balance</h3>
