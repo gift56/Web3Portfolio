@@ -17,13 +17,13 @@ const ERC20ProjectPage = () => {
       />
       <div className={styles.grid}>
         <div className={styles.componentCard}>
-            
+            <h3>Token Stats</h3>
         </div>
         <div className={styles.componentCard}>
-            
+            <h3>Token Balance</h3>
         </div>
         <div className={styles.componentCard}>
-            
+            <h3>Earn Tokens</h3>
         </div>
       </div>
     </div>
