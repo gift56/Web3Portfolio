@@ -1,3 +1,5 @@
+
+
 type HeroCardProps = {
   isLoading: boolean;
   title: string;
@@ -5,8 +7,10 @@ type HeroCardProps = {
   image: string;
 };
 
-const HeroCard = () => {
-  return <div>HeroCard</div>;
+const HeroCard = (props: HeroCardProps) => {
+  return <>
+  
+  </>;
 };
 
 export default HeroCard;
