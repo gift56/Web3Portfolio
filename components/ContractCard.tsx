@@ -14,7 +14,14 @@ const ContractCard = (props: ContractCardProp) => {
 
   const { data: contractMetadata, isLoading } = useContractMetadata(contract);
 
-  return <Link href={props.href} className={styles.card}></Link>;
+  return (
+    <Link href={props.href} className={styles.card}>
+      <div className={styles.cardText}>
+        <h2 className={styles.gradientText1}>{props.title}</h2>
+        <p>{props.description}</p>
+      </div>
+    </Link>
+  );
 };
 
 export default ContractCard;
