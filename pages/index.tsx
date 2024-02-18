@@ -49,19 +49,19 @@ const Home: NextPage = () => {
             href="/"
             contractAddress={STAKING_CONTRACT_ADDRESS}
             title="Staking →"
-            description="A standard interface for tokens."
+            description="Stake your ERC721 NFT to earn ERC20 token."
           />
           <ContractCard
             href="/"
             contractAddress={PROFILE_STATUS_CONTRACT_ADDRESS}
             title="Profile Status →"
-            description="A standard interface for tokens."
+            description="Update your profile status on the blockchain"
           />
           <ContractCard
             href="/"
             contractAddress={TIP_JAR_CONTRACT_ADDRESS}
             title="Tip Jar →"
-            description="A standard interface for tokens."
+            description=""
           />
         </div>
       </div>
