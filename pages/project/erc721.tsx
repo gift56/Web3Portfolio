@@ -1,5 +1,6 @@
 import {
   Web3Button,
+  useAddress,
   useClaimedNFTSupply,
   useContract,
   useContractMetadata,
@@ -10,6 +11,8 @@ import styles from "../../styles/Home.module.css";
 import { HeroCard } from "../../components";
 
 const ERC721ProjectPage = () => {
+  const address = useAddress();
+  
   const { contract } = useContract(ERC721_CONTRACT_ADDRESS, "nft-drop");
   const { data: contractMetadata, isLoading } = useContractMetadata(contract);
 
