@@ -71,7 +71,6 @@
 .grid {
   display: grid;
   justify-content: flex-start;
-
   grid-template-columns: auto auto auto;
   gap: 20px;
 }
@@ -99,6 +98,7 @@
   border-radius: 4px 4px 0 0;
   margin-bottom: 12px;
   border: none;
+  object-fit: cover !important;
 }
 
 .card:hover,
