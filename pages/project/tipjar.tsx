@@ -15,6 +15,9 @@ const TipJarProjectPage = () => {
         description={contractMetadata?.description!}
         image={contractMetadata?.image!}
       />
+      <div className={styles.grid}>
+        
+      </div>
     </div>
   );
 };
