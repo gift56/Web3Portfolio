@@ -327,9 +327,14 @@
   align-items: center;
   width: 100%;
 }
-.claimableRewards {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-  margin: 0.75rem 0;
+.matchButton {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #131313;
+  margin: 0.75rem;
+  outline: none;
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid white;
 }
