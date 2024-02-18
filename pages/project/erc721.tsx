@@ -46,9 +46,14 @@ const ERC721ProjectPage = () => {
             Total Supply:
             {isLoadingTotalSupply
               ? "Loading Total Supply..."
-              : `${totalSupply?.toNumber()}`}
+              : ` ${totalSupply?.toNumber()}`}
           </p>
-          <p></p>
+          <p>
+            Total Claim:
+            {isLoadingClaimedTotalSuppy
+              ? "Loading Total Claimed..."
+              : ` ${totalClaimedSupply?.toNumber()}`}
+          </p>
         </div>
         <div className={styles.stakeSection}>
           <h3>Your NFTS</h3>
