@@ -15,7 +15,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title></title>
+        <title>Web3 Portfolio</title>
       </Head>
       <main className={styles.main}>
         <div className={styles.container}>
