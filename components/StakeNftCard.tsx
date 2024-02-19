@@ -1,12 +1,27 @@
 import { NFT } from "@thirdweb-dev/sdk";
 import styles from "../styles/Home.module.css";
-import { ThirdwebNftMedia } from "@thirdweb-dev/react";
+import {
+  ThirdwebNftMedia,
+  Web3Button,
+  useAddress,
+  useContract,
+} from "@thirdweb-dev/react";
+import {
+  ERC721_CONTRACT_ADDRESS,
+  STAKING_CONTRACT_ADDRESS,
+} from "../constants/addresses";
 
 type NFTProps = {
   nft: NFT;
 };
 
 const StakeNftCard = ({ nft }: NFTProps) => {
+  const address = useAddress();
+  const { contract: ERC721Contract } = useContract(
+    ERC721_CONTRACT_ADDRESS,
+    "nft-drop"
+  );
+  
   return (
     <div className={styles.card}>
       <ThirdwebNftMedia metadata={nft.metadata} />
@@ -14,6 +29,9 @@ const StakeNftCard = ({ nft }: NFTProps) => {
         <h2 className={styles.gradientText1}>{nft.metadata.name}</h2>
         <p>Token ID#{nft.metadata.id}</p>
       </div>
+      <Web3Button contractAddress={STAKING_CONTRACT_ADDRESS} action={}>
+        Stake
+      </Web3Button>
     </div>
   );
 };
