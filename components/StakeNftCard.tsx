@@ -21,7 +21,23 @@ const StakeNftCard = ({ nft }: NFTProps) => {
     ERC721_CONTRACT_ADDRESS,
     "nft-drop"
   );
-  
+
+  const { contract: StakingContract } = useContract(STAKING_CONTRACT_ADDRESS);
+
+  async function stakeNft(nftId: number[]) {
+    if (!address) return;
+
+    const isApproved = await ERC721Contract?.isApproved(
+      address,
+      STAKING_CONTRACT_ADDRESS
+    );
+
+    if (!isApproved) {
+      await ERC721Contract?.setApprovalForAll(STAKING_CONTRACT_ADDRESS, true);
+    }
+    await StakingContract?.call("stake", [nftId]);
+  }
+
   return (
     <div className={styles.card}>
       <ThirdwebNftMedia metadata={nft.metadata} />
