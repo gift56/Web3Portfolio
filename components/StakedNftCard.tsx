@@ -15,7 +15,10 @@ const StakedNftCard = ({ tokenId }: NftProps) => {
 
   const { contract: StakingContract } = useContract(STAKING_CONTRACT_ADDRESS);
 
-  const { data: nftData } = useNFT(ERC721Contract, tokenId);
+  const { data: nftData, isLoading: isLoadingNftData } = useNFT(
+    ERC721Contract,
+    tokenId
+  );
 
   return (
     <div
