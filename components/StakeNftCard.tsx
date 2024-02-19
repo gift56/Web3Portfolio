@@ -48,7 +48,7 @@ const StakeNftCard = ({ nft }: NFTProps) => {
       <Web3Button
         contractAddress={STAKING_CONTRACT_ADDRESS}
         action={() => stakeNft([parseInt(nft.metadata.id)])}
-        style={{ width: "100%", margin: "0" }}
+        style={{ width: "100%"}}
       >
         Stake
       </Web3Button>
