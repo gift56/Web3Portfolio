@@ -5,7 +5,7 @@ type NFTProps = {
 };
 
 const StakeNftCard = ({ nft }: NFTProps) => {
-  return <div>StakeNftCard</div>;
+  return <div className={styles.card}>StakeNftCard</div>;
 };
 
 export default StakeNftCard;
