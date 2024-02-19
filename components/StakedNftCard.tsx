@@ -25,6 +25,8 @@ const StakedNftCard = ({ tokenId }: NftProps) => {
     tokenId
   );
 
+  if (isLoadingNftData) return "Loading..";
+
   return (
     <div
       className={styles.card}

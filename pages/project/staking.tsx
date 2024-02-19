@@ -96,11 +96,13 @@ const StakingProjectPage = () => {
           {isLoadingStakeERC721Tokens
             ? "Loading..."
             : stakeERC721Tokens && stakeERC721Tokens?.length > 0
-            ? stakeERC721Tokens?.map((stakedNft: BigNumber, index: number) => (
-                <div key={index} style={{ width: "100%" }}>
-                  <StakedNftCard tokenId={stakedNft.toNumber()} />
-                </div>
-              ))
+            ? stakeERC721Tokens[0]?.map(
+                (stakedNft: BigNumber, index: number) => (
+                  <div key={index} style={{ width: "100%" }}>
+                    <StakedNftCard tokenId={stakedNft.toNumber()} />
+                  </div>
+                )
+              )
             : "No NFTS Staked"}
         </div>
       </div>
