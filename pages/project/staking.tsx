@@ -93,6 +93,15 @@ const StakingProjectPage = () => {
         </div>
         <div className={styles.stakeSection}>
           <h3>Staked</h3>
+          {isLoadingStakeERC721Tokens
+            ? "Loading..."
+            : stakeERC721Tokens && stakeERC721Tokens?.length > 0
+            ? stakeERC721Tokens?.map((nft) => (
+                <div key={nft.metadata.id} style={{ width: "100%" }}>
+                  <StakeNftCard nft={nft} />
+                </div>
+              ))
+            : "No NFTS Owned"}
         </div>
       </div>
     </div>
