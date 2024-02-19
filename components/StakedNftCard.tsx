@@ -37,7 +37,7 @@ const StakedNftCard = ({ tokenId }: NftProps) => {
       </div>
       <Web3Button
         contractAddress={STAKING_CONTRACT_ADDRESS}
-        action={(contract) => contract.call("withdraw", [tokenId])}
+        action={(contract) => contract.call("withdraw", [[tokenId]])}
         style={{ width: "100%" }}
       >
         Unstake
