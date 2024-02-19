@@ -22,7 +22,15 @@ const StakingProjectPage = () => {
         image={contractMetadata?.image!}
       />
       <div className={styles.grid}>
-        
+        <div className={styles.stakeSection}>
+          <h3>Rewards</h3>
+        </div>
+        <div className={styles.stakeSection}>
+          <h3>UnStaked</h3>
+        </div>
+        <div className={styles.stakeSection}>
+          <h3>Staked</h3>
+        </div>
       </div>
     </div>
   );
