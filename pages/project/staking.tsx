@@ -3,6 +3,7 @@ import {
   useAddress,
   useContract,
   useContractMetadata,
+  useContractRead,
   useOwnedNFTs,
   useTokenBalance,
 } from "@thirdweb-dev/react";
@@ -30,6 +31,9 @@ const StakingProjectPage = () => {
 
   const { data: ownedERC721NFTS, isLoading: isLoadingOwnedERC721NFTS } =
     useOwnedNFTs(ERC721Contract, address);
+
+  const { data: stakeERC721Tokens, isLoading: isLoadingStakeERC721Tokens } =
+    useContractRead(contract, "getStakeInfo", [address]);
 
   useEffect(() => {
     if (!contract || !address) return;
