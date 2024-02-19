@@ -32,6 +32,13 @@ const StakingProjectPage = () => {
       <div className={styles.grid}>
         <div className={styles.stakeSection}>
           <h3>Rewards</h3>
+          {isLoadingTokenBalance ? (
+            "Loading Balance..."
+          ) : (
+            <p>
+              Balance: {tokenBalance?.displayValue} {tokenBalance?.symbol}
+            </p>
+          )}
         </div>
         <div className={styles.stakeSection}>
           <h3>UnStaked</h3>
