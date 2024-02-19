@@ -28,7 +28,8 @@ const StakingProjectPage = () => {
   const { data: tokenBalance, isLoading: isLoadingTokenBalance } =
     useTokenBalance(ERC20Contract, address);
 
-  const { data: ownedERC721NFTS, isLoading:isLoadingOwnedERC721NFT } = useOwnedNFTs(ERC721Contract, address);
+  const { data: ownedERC721NFTS, isLoading: isLoadingOwnedERC721NFTS } =
+    useOwnedNFTs(ERC721Contract, address);
 
   useEffect(() => {
     if (!contract || !address) return;
