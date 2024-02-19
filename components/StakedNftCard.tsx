@@ -1,4 +1,4 @@
-import { useContract, useNFT } from "@thirdweb-dev/react";
+import { ThirdwebNftMedia, useContract, useNFT } from "@thirdweb-dev/react";
 import styles from "../styles/Home.module.css";
 import {
   ERC721_CONTRACT_ADDRESS,
@@ -25,7 +25,11 @@ const StakedNftCard = ({ tokenId }: NftProps) => {
       className={styles.card}
       style={{ width: "100%", paddingBottom: "16px" }}
     >
-      StakedNftCard
+      <ThirdwebNftMedia metadata={nftData?.metadata!} />
+      <div className={styles.cardText}>
+        <h2 className={styles.gradientText1}>{nftData?.metadata.name}</h2>
+        <p>Token ID#{nftData?.metadata.id}</p>
+      </div>
     </div>
   );
 };
