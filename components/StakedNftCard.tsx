@@ -1,6 +1,6 @@
 type NftProps = { tokenId: Number };
 
-const StakedNftCard = () => {
+const StakedNftCard = ({ tokenId }: NftProps) => {
   return <div>StakedNftCard</div>;
 };
 
