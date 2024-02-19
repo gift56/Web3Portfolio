@@ -11,7 +11,7 @@ import {
   ERC721_CONTRACT_ADDRESS,
   STAKING_CONTRACT_ADDRESS,
 } from "../../constants/addresses";
-import { HeroCard } from "../../components";
+import { HeroCard, StakeNftCard } from "../../components";
 import styles from "../../styles/Home.module.css";
 import { useEffect, useState } from "react";
 import { BigNumber, ethers } from "ethers";
@@ -77,6 +77,11 @@ const StakingProjectPage = () => {
         </div>
         <div className={styles.stakeSection}>
           <h3>UnStaked</h3>
+          {isLoadingOwnedERC721NFTS
+            ? "Loading..."
+            : ownedERC721NFTS && ownedERC721NFTS?.length > 0
+            ? ownedERC721NFTS?.map((nft) => <StakeNftCard nft={nft} />)
+            : "No NFTS Owned"}
         </div>
         <div className={styles.stakeSection}>
           <h3>Staked</h3>
