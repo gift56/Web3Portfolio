@@ -1,4 +1,9 @@
-import { ThirdwebNftMedia, useContract, useNFT } from "@thirdweb-dev/react";
+import {
+  ThirdwebNftMedia,
+  Web3Button,
+  useContract,
+  useNFT,
+} from "@thirdweb-dev/react";
 import styles from "../styles/Home.module.css";
 import {
   ERC721_CONTRACT_ADDRESS,
@@ -30,6 +35,13 @@ const StakedNftCard = ({ tokenId }: NftProps) => {
         <h2 className={styles.gradientText1}>{nftData?.metadata.name}</h2>
         <p>Token ID#{nftData?.metadata.id}</p>
       </div>
+      <Web3Button
+        contractAddress={STAKING_CONTRACT_ADDRESS}
+        action={(contract) => contract.call("withdraw", [tokenId])}
+        style={{ width: "100%" }}
+      >
+        Unstake
+      </Web3Button>
     </div>
   );
 };
