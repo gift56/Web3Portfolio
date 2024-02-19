@@ -11,7 +11,7 @@ import {
 import { HeroCard } from "../../components";
 import styles from "../../styles/Home.module.css";
 import { useEffect, useState } from "react";
-import { BigNumber } from "ethers";
+import { BigNumber, ethers } from "ethers";
 
 const StakingProjectPage = () => {
   const [claimableReward, setClaimableReward] = useState<BigNumber>();
@@ -52,6 +52,9 @@ const StakingProjectPage = () => {
             <p>
               Balance: {tokenBalance?.displayValue} {tokenBalance?.symbol}
             </p>
+          )}
+          {claimableReward && (
+            <p>Reward Balance: {ethers.utils.formatEther(claimableReward)}</p>
           )}
         </div>
         <div className={styles.stakeSection}>
