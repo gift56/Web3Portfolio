@@ -3,10 +3,12 @@ import {
   useAddress,
   useContract,
   useContractMetadata,
+  useOwnedNFTs,
   useTokenBalance,
 } from "@thirdweb-dev/react";
 import {
   ERC20_CONTRACT_ADDRESS,
+  ERC721_CONTRACT_ADDRESS,
   STAKING_CONTRACT_ADDRESS,
 } from "../../constants/addresses";
 import { HeroCard } from "../../components";
@@ -20,10 +22,13 @@ const StakingProjectPage = () => {
 
   const { contract } = useContract(STAKING_CONTRACT_ADDRESS);
   const { data: ERC20Contract } = useContract(ERC20_CONTRACT_ADDRESS);
+  const { data: ERC721Contract } = useContract(ERC721_CONTRACT_ADDRESS);
   const { data: contractMetadata, isLoading } = useContractMetadata(contract);
 
   const { data: tokenBalance, isLoading: isLoadingTokenBalance } =
     useTokenBalance(ERC20Contract, address);
+
+  const { data: ownedERC721NFTS, isLoading:isLoadingOwnedERC721NFT } = useOwnedNFTs(ERC721Contract, address);
 
   useEffect(() => {
     if (!contract || !address) return;
@@ -64,7 +69,7 @@ const StakingProjectPage = () => {
               alert("Claimed Successfully");
               setClaimableReward(ethers.constants.Zero);
             }}
-            isDisabled={!claimableReward|| claimableReward.isZero()}
+            isDisabled={!claimableReward || claimableReward.isZero()}
           >
             Claim Reward
           </Web3Button>
