@@ -25,7 +25,8 @@ const StakedNftCard = ({ tokenId }: NftProps) => {
     tokenId
   );
 
-  if (isLoadingNftData) return "Loading..";
+  if (isLoadingNftData)
+    return <div className={styles.loadingText}>Loading... </div>;
 
   return (
     <div

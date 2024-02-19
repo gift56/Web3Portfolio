@@ -16,7 +16,7 @@ type ContractCardProp = {
 const ContractCard = (props: ContractCardProp) => {
   const { contract } = useContract(props.contractAddress);
 
-  const { data: contractMetadata, isLoading } = useContractMetadata(contract);
+  const { data: contractMetadata } = useContractMetadata(contract);
 
   return (
     <Link href={props.href} className={styles.card}>

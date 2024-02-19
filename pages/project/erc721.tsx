@@ -55,24 +55,30 @@ const ERC721ProjectPage = () => {
           <h3>Contract Stats</h3>
           <p>
             Total Supply:
-            {isLoadingTotalSupply
-              ? "Loading Total Supply..."
-              : ` ${totalSupply?.toNumber()}`}
+            {isLoadingTotalSupply ? (
+              <span className={styles.loadingText}>Loading... </span>
+            ) : (
+              ` ${totalSupply?.toNumber()}`
+            )}
           </p>
           <p>
             Total Claim:
-            {isLoadingClaimedTotalSuppy
-              ? "Loading Total Claimed..."
-              : ` ${totalClaimedSupply?.toNumber()}`}
+            {isLoadingClaimedTotalSuppy ? (
+              <span className={styles.loadingText}>Loading... </span>
+            ) : (
+              ` ${totalClaimedSupply?.toNumber()}`
+            )}
           </p>
         </div>
         <div className={styles.stakeSection}>
           <h3>Your NFTS</h3>
           <p>
             Total Owned:{" "}
-            {isLoadingOwnedNfts
-              ? "Loading Owned Nfts..."
-              : ` ${ownedNfts?.length}`}
+            {isLoadingOwnedNfts ? (
+              <span className={styles.loadingText}>Loading... </span>
+            ) : (
+              ` ${ownedNfts?.length}`
+            )}
           </p>
         </div>
       </div>
@@ -81,26 +87,26 @@ const ERC721ProjectPage = () => {
           My NFTS:{" "}
         </h2>
         <div className={styles.grid}>
-          {isLoadingOwnedNfts
-            ? "Loading NFTS"
-            : ownedNfts?.map((nft) => (
-                <div key={nft.metadata.id} className={styles.card}>
-                  <ThirdwebNftMedia metadata={nft.metadata} />
-                  <div className={styles.cardText}>
-                    <h2 className={styles.gradientText1}>
-                      {nft.metadata.name}
-                    </h2>
-                    <Link href={`/project/staking`}>
-                      <button
-                        className={styles.matchButton}
-                        style={{ width: "100%", margin: "0" }}
-                      >
-                        Stake NFT
-                      </button>
-                    </Link>
-                  </div>
+          {isLoadingOwnedNfts ? (
+            <span className={styles.loadingText}>Loading... </span>
+          ) : (
+            ownedNfts?.map((nft) => (
+              <div key={nft.metadata.id} className={styles.card}>
+                <ThirdwebNftMedia metadata={nft.metadata} />
+                <div className={styles.cardText}>
+                  <h2 className={styles.gradientText1}>{nft.metadata.name}</h2>
+                  <Link href={`/project/staking`}>
+                    <button
+                      className={styles.matchButton}
+                      style={{ width: "100%", margin: "0" }}
+                    >
+                      Stake NFT
+                    </button>
+                  </Link>
                 </div>
-              ))}
+              </div>
+            ))
+          )}
         </div>
       </div>
     </div>

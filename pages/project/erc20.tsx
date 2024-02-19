@@ -36,7 +36,7 @@ const ERC20ProjectPage = () => {
         <div className={styles.stakeSection}>
           <h3>Token Stats</h3>
           {tokenSupplyLoading ? (
-            "Loading Supply..."
+            <div className={styles.loadingText}>Loading... </div>
           ) : (
             <p>
               Total Supply : {tokenSupply?.displayValue} {tokenSupply?.symbol}
@@ -51,7 +51,7 @@ const ERC20ProjectPage = () => {
               <ConnectWallet />
             </div>
           ) : tokenBalanceLoading ? (
-            "Loading Balance..."
+            <div className={styles.loadingText}>Loading... </div>
           ) : (
             <>
               <p>
