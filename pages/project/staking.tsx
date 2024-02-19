@@ -80,7 +80,11 @@ const StakingProjectPage = () => {
           {isLoadingOwnedERC721NFTS
             ? "Loading..."
             : ownedERC721NFTS && ownedERC721NFTS?.length > 0
-            ? ownedERC721NFTS?.map((nft) => <StakeNftCard nft={nft} />)
+            ? ownedERC721NFTS?.map((nft) => (
+                <div key={nft.metadata.id} style={{ width: "100%" }}>
+                  <StakeNftCard nft={nft} />
+                </div>
+              ))
             : "No NFTS Owned"}
         </div>
         <div className={styles.stakeSection}>
