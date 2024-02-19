@@ -12,7 +12,7 @@ import {
   ERC721_CONTRACT_ADDRESS,
   STAKING_CONTRACT_ADDRESS,
 } from "../../constants/addresses";
-import { HeroCard, StakeNftCard } from "../../components";
+import { HeroCard, StakeNftCard, StakedNftCard } from "../../components";
 import styles from "../../styles/Home.module.css";
 import { useEffect, useState } from "react";
 import { BigNumber, ethers } from "ethers";
@@ -96,12 +96,12 @@ const StakingProjectPage = () => {
           {isLoadingStakeERC721Tokens
             ? "Loading..."
             : stakeERC721Tokens && stakeERC721Tokens?.length > 0
-            ? stakeERC721Tokens?.map((nft) => (
-                <div key={nft.metadata.id} style={{ width: "100%" }}>
-                  <StakeNftCard nft={nft} />
+            ? stakeERC721Tokens?.map((stakedNft: BigNumber, index: number) => (
+                <div key={index} style={{ width: "100%" }}>
+                  <StakedNftCard tokenId={stakedNft.toNumber()} />
                 </div>
               ))
-            : "No NFTS Owned"}
+            : "No NFTS Staked"}
         </div>
       </div>
     </div>
