@@ -1,3 +1,5 @@
+import styles from "../styles/Home.module.css";
+
 type NftProps = { tokenId: Number };
 
 const StakedNftCard = ({ tokenId }: NftProps) => {
