@@ -2,8 +2,12 @@ import {
   useAddress,
   useContract,
   useContractMetadata,
+  useTokenBalance,
 } from "@thirdweb-dev/react";
-import { STAKING_CONTRACT_ADDRESS } from "../../constants/addresses";
+import {
+  ERC20_CONTRACT_ADDRESS,
+  STAKING_CONTRACT_ADDRESS,
+} from "../../constants/addresses";
 import { HeroCard } from "../../components";
 import styles from "../../styles/Home.module.css";
 
@@ -11,7 +15,11 @@ const StakingProjectPage = () => {
   const address = useAddress();
 
   const { contract } = useContract(STAKING_CONTRACT_ADDRESS);
+  const { data: ERC20Contract } = useContract(ERC20_CONTRACT_ADDRESS);
   const { data: contractMetadata, isLoading } = useContractMetadata(contract);
+
+  const { data: tokenBalance, isLoading: isLoadingTokenBalance } =
+    useTokenBalance(ERC20Contract, address);
 
   return (
     <div className={styles.container}>
