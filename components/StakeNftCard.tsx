@@ -39,7 +39,10 @@ const StakeNftCard = ({ nft }: NFTProps) => {
   }
 
   return (
-    <div className={styles.card}>
+    <div
+      className={styles.card}
+      style={{ width: "100%", paddingBottom: "16px" }}
+    >
       <ThirdwebNftMedia metadata={nft.metadata} />
       <div className={styles.cardText}>
         <h2 className={styles.gradientText1}>{nft.metadata.name}</h2>
@@ -48,7 +51,7 @@ const StakeNftCard = ({ nft }: NFTProps) => {
       <Web3Button
         contractAddress={STAKING_CONTRACT_ADDRESS}
         action={() => stakeNft([parseInt(nft.metadata.id)])}
-        style={{ width: "100%"}}
+        style={{ width: "100%" }}
       >
         Stake
       </Web3Button>
