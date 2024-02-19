@@ -64,6 +64,7 @@ const StakingProjectPage = () => {
               alert("Claimed Successfully");
               setClaimableReward(ethers.constants.Zero);
             }}
+            isDisabled={!claimableReward|| claimableReward.isZero()}
           >
             Claim Reward
           </Web3Button>
