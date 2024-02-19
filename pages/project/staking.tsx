@@ -10,8 +10,11 @@ import {
 } from "../../constants/addresses";
 import { HeroCard } from "../../components";
 import styles from "../../styles/Home.module.css";
+import { useEffect, useState } from "react";
+import { BigNumber } from "ethers";
 
 const StakingProjectPage = () => {
+  const [claimableReward, setClaimableReward] = useState<BigNumber>();
   const address = useAddress();
 
   const { contract } = useContract(STAKING_CONTRACT_ADDRESS);
@@ -20,6 +23,17 @@ const StakingProjectPage = () => {
 
   const { data: tokenBalance, isLoading: isLoadingTokenBalance } =
     useTokenBalance(ERC20Contract, address);
+
+  useEffect(() => {
+    if (!contract || !address) return;
+
+    async function getClaimableReward() {
+      const claimableRewards = await contract?.call("getStakeInfo", [address]);
+
+      setClaimableReward(claimableRewards[1]);
+    }
+    getClaimableReward();
+  }, [address, contract]);
 
   return (
     <div className={styles.container}>
