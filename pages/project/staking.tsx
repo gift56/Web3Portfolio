@@ -1,4 +1,5 @@
 import {
+  Web3Button,
   useAddress,
   useContract,
   useContractMetadata,
@@ -56,6 +57,16 @@ const StakingProjectPage = () => {
           {claimableReward && (
             <p>Reward Balance: {ethers.utils.formatEther(claimableReward)}</p>
           )}
+          <Web3Button
+            contractAddress={STAKING_CONTRACT_ADDRESS}
+            action={(contract) => contract.call("claimRewards")}
+            onSuccess={() => {
+              alert("Claimed Successfully");
+              setClaimableReward(ethers.constants.Zero);
+            }}
+          >
+            Claim Reward
+          </Web3Button>
         </div>
         <div className={styles.stakeSection}>
           <h3>UnStaked</h3>
