@@ -1,9 +1,11 @@
+import { NFT } from "@thirdweb-dev/sdk";
 
+type NFTProps = {
+  nft: NFT;
+};
 
-const StakeNftCard = () => {
-  return (
-    <div>StakeNftCard</div>
-  )
-}
+const StakeNftCard = ({ nft }: NFTProps) => {
+  return <div>StakeNftCard</div>;
+};
 
-export default StakeNftCard
+export default StakeNftCard;
